@@ -7,7 +7,7 @@ import {
   ViewStyle,
   TextStyle,
 } from 'react-native';
-import Colors from '../constants/theme';
+import {Colors} from '../constants/theme';
 
 type Props = {
   title: string;

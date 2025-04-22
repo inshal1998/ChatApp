@@ -10,7 +10,7 @@ import CountryPicker, {
   Country,
   CountryCode,
 } from 'react-native-country-picker-modal';
-import Colors from '../constants/theme';
+import {Colors} from '../constants/theme';
 
 type Props = TextInputProps & {
   showCountryCode?: boolean;
