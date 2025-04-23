@@ -15,7 +15,7 @@ const CustomHeader: React.FC = () => {
       <Text style={[styles.title, { color: currentTheme.text }]}>App Header</Text>
       <TouchableOpacity onPress={() => dispatch(toggleTheme())}>
         <Text style={[styles.toggleText, { color: currentTheme.text }]}>
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+          {theme === 'light' ? '🌙' : '☀️'}
         </Text>
       </TouchableOpacity>
     </View>
@@ -27,7 +27,6 @@ export default CustomHeader;
 const styles = StyleSheet.create({
   container: {
     height: 60,
-    marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

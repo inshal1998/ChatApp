@@ -1,11 +1,13 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { CustomButton, CustomTextInput } from '../../components'
-import withTheme from '../../hoc/withTheme'
+import { useTheme } from '../../context/ThemeContext';
 
-const LoginScreen :React.FC<{ theme: any }> = ({ theme }) => {
+
+const LoginScreen :React.FC = () => {
+  const { themeColors, toggle } = useTheme();
   return (
-    <View style={{ flex:1 , backgroundColor:theme.background }}>
+    <View style={{ flex:1  , backgroundColor:themeColors.background }}>
       <CustomTextInput
         placeholder="Enter phone number"
         keyboardType="phone-pad"
