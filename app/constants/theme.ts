@@ -11,12 +11,14 @@ const Colors = {
 
 const themeConfig = {
   light: {
-    background: Colors.background, 
-    text: Colors.textPrimary,
+    background: '#fff',
+    text: '#000',
+    secondary: '#f0f0f0',
   },
   dark: {
-    background: Colors.textPrimary,
-    text: Colors.background,
+    background: '#121212',
+    text: '#fff',
+    secondary: '#333',
   },
 };
 
