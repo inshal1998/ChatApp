@@ -6,6 +6,7 @@ import {Colors} from './constants/theme';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import {ThemeProvider} from './context/ThemeContext';
 
+
 const AppEntry: React.FC = () => {
   return (
     <SafeAreaProvider>
