@@ -8,4 +8,17 @@ const Colors = {
   disabled: '#D3D3D3',
 };
 
-export default Colors;
+
+const themeConfig = {
+  light: {
+    background: Colors.background, 
+    text: Colors.textPrimary,
+  },
+  dark: {
+    background: Colors.textPrimary,
+    text: Colors.background,
+  },
+};
+
+
+export {Colors , themeConfig};
