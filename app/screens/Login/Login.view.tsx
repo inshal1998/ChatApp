@@ -5,7 +5,7 @@ import { useTheme } from '../../context/ThemeContext';
 
 
 const LoginScreen :React.FC = () => {
-  const { themeColors, toggle } = useTheme();
+  const { themeColors } = useTheme();
   return (
     <View style={{ flex:1  , backgroundColor:themeColors.background }}>
       <CustomTextInput

@@ -3,7 +3,7 @@ import {RouteProp} from '@react-navigation/native';
 
 export type RootStackParamList = {
   Home: undefined;
-  Login: { theme: { background: string; text: string } };
+  Login: undefined;
 };
 
 export type StackNavigationProps =
