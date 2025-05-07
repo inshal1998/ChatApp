@@ -16,6 +16,8 @@ const LoginScreen: React.FC = () => {
   const [email, setEmail] = useState('inshal@gmail.com');
   const [password, setPassword] = useState('Inshal@123');
   const [loading, setLoading] = useState(false);
+  const [username, setUsername] = useState(''); // Add username state
+
   const navigation = useNavigation<any>();
   const auth = getAuth();
 
@@ -43,7 +45,7 @@ const LoginScreen: React.FC = () => {
   // }
   
   const handleLogin = async () => {
-    if (!email || !password) {
+    if (!email || !password || !username) {
       Alert.alert('Error', 'Please enter both email and password.');
       return;
     }
@@ -56,6 +58,7 @@ const LoginScreen: React.FC = () => {
         await firestore().collection('users').doc(uid).set({
           email,
           uid,
+          username,
           createdAt: firestore.FieldValue.serverTimestamp(),
         });
       }
@@ -85,6 +88,12 @@ const LoginScreen: React.FC = () => {
         keyboardType="email-address"
         onChangeText={setEmail}
         value={email}
+      />
+      <CustomTextInput
+        placeholder="Enter Username"
+        keyboardType="default"
+        onChangeText={setUsername}
+        value={username}
       />
       <CustomTextInput
         placeholder="Enter Password"
