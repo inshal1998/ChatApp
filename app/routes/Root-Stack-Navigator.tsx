@@ -14,16 +14,21 @@ const RootStackNavigator = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ animation: 'slide_from_right' }}>
+      <Stack.Navigator screenOptions={{ animation: 'slide_from_right' , headerShown:false }}>
         {user ? (
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen
+          options={{
+            headerShown: true,
+            header: () => <CustomHeader title={"Home"}/>,
+          }}
+           name="Home" component={Home} />
         ) : (
           <Stack.Screen
             name="Login"
             component={Login}
             options={{
               headerShown: true,
-              header: () => <CustomHeader />,
+              header: () => <CustomHeader title='Login'/>,
             }}
           />
         )}
