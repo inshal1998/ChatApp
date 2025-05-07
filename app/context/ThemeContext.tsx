@@ -7,7 +7,7 @@ import { themeConfig } from '../constants/theme';
 const ThemeContext = createContext<any>(null);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const theme = useSelector((state: RootState) => state.theme);
+  const theme = useSelector((state: RootState) => state.theme.theme);
   const dispatch = useDispatch();
   const themeColors = themeConfig[theme];
 

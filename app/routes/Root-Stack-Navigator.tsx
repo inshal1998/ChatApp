@@ -1,29 +1,32 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {NavigationContainer} from '@react-navigation/native';
-import {
-  Home,
-  Login
-} from '../screens';
-import {RootStackParamList} from './Navigation-Types';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { Home, Login } from '../screens';
+import { RootStackParamList } from './Navigation-Types';
 import { CustomHeader } from '../components';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootStackNavigator = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
+
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{animation: 'slide_from_right'}}>
-          <Stack.Group
-            screenOptions={({route}) => ({
-              headerShown: false,
-            })}>
-            <Stack.Screen name="Login" component={Login}  options={{
-              headerShown:true,
+      <Stack.Navigator screenOptions={{ animation: 'slide_from_right' }}>
+        {user ? (
+          <Stack.Screen name="Home" component={Home} />
+        ) : (
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              headerShown: true,
               header: () => <CustomHeader />,
-            }}/>
-            <Stack.Screen name="Home" component={Home} />
-          </Stack.Group>
+            }}
+          />
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );
