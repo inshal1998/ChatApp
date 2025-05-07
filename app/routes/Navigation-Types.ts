@@ -4,6 +4,7 @@ import {RouteProp} from '@react-navigation/native';
 export type RootStackParamList = {
   Home: undefined;
   Login: undefined;
+  ChatScreen: undefined;
 };
 
 export type StackNavigationProps =
