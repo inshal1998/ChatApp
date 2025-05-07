@@ -17,18 +17,18 @@ const RootStackNavigator = () => {
       <Stack.Navigator screenOptions={{ animation: 'slide_from_right' , headerShown:false }}>
         {user ? (
           <Stack.Group>
-          <Stack.Screen
-          options={{
-            headerShown: true,
-            header: () => <CustomHeader title={"Home"}/>,
-          }}
-          name="Home" component={Home} />
-          <Stack.Screen
-          options={{
-            headerShown: true,
-            header: () => <CustomHeader title={"ChatScreen"}/>,
-          }}
-          name="ChatScreen" component={ChatScreen} />
+            <Stack.Screen
+            options={{
+              headerShown: true,
+              header: () => <CustomHeader title={"Home"}/>,
+            }}
+            name="Home" component={Home} />
+            <Stack.Screen
+            options={{
+              headerShown: true,
+              header: () => <CustomHeader title={"ChatScreen"}/>,
+            }}
+            name="ChatScreen" component={ChatScreen} />
         </Stack.Group>
         ) : (
           <Stack.Screen
