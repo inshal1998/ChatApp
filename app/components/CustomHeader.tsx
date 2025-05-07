@@ -7,7 +7,7 @@ import { themeConfig } from '../constants/theme';
 
 const CustomHeader: React.FC = () => {
   const dispatch = useDispatch();
-  const theme = useSelector((state: RootState) => state.theme);
+  const theme = useSelector((state: RootState) => state.theme.theme);
   const currentTheme = themeConfig[theme];
 
   return (
